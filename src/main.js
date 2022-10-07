@@ -6,8 +6,8 @@ console.log(letters)
 const symbols = '!#$%&/()[].,;<>?¿¡+*-='
 
 letters += '1234567890'
-const allCharactersArr = letters.split('')
-console.log(allCharactersArr);
+// const allCharactersArr = letters.split('')
+// console.log(allCharactersArr);
 
 const randomPassword = (passWordLength) => {
   //minimun password length = 6
@@ -16,8 +16,8 @@ const randomPassword = (passWordLength) => {
   let randomNum = 0;
   if(passWordLength >= minLength){
     for(let i = 0; i < passWordLength; i++){
-      randomNum = Math.floor(Math.random() * (allCharactersArr.length));
-      randomNumArr.push(allCharactersArr[randomNum]);
+      randomNum = Math.floor(Math.random() * (letters.length));
+      randomNumArr.push(letters[randomNum]);
     }
 
     console.log(randomNumArr)
