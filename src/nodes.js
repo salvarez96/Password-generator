@@ -1,5 +1,5 @@
-const showPasswordLength = document.querySelector('.password-length--show');
-const passwordLengthSlider = document.querySelector('.password-length-slider');
+const showPasswordLength = document.querySelector('.length-container__text--num-value');
+const passwordLengthSlider = document.querySelector('.length-container__slider');
 
 showPasswordLength.innerText = passwordLengthSlider.value;
 passwordLengthSlider.addEventListener('input', () => {
