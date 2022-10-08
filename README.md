@@ -12,3 +12,4 @@ The program creates a random password between 6 and 30 characters long, dependin
 - Create a little message so the user knows if the password was succesfully copied to the clipboard.
 - Add animations to the UI.
 - Add some tips about passwords.
+- Improve mobile experience.
