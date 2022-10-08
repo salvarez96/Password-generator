@@ -1,12 +1,13 @@
-import { randomPassword } from "./main.js";
+import { randomPassword, copyPassword } from "./main.js";
 
 const getElements = (idOrClass) => document.querySelector(idOrClass);
 
 const showPasswordLength = getElements('.length-container__text--num-value');
 const passwordLengthSlider = getElements('.length-container__slider');
 const passwordText = getElements('.password-container__text');
-const passwordCopy = getElements('.password-container__copy');
+const passwordCopyButton = getElements('.password-container__copy');
 const generateButton = getElements('#generate-password');
+const clipboardText = getElements('.password-container__text--hidden');
 
 showPasswordLength.innerText = passwordLengthSlider.value;
 
@@ -16,8 +17,10 @@ passwordLengthSlider.addEventListener('input', () => {
   passwordLength = passwordLengthSlider.value;
 });
 
-document.addEventListener('DOMContentLoaded', randomPassword(passwordLength));
+randomPassword(passwordLength);
 
 generateButton.addEventListener('click', () => randomPassword(passwordLength));
 
-export {showPasswordLength, passwordLengthSlider, passwordCopy, passwordText, generateButton, passwordLength};
+passwordCopyButton.addEventListener('click', () => copyPassword());
+
+export {passwordText, clipboardText};

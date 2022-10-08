@@ -1,24 +1,29 @@
-import {passwordText} from './nodes.js';
+import {passwordText, clipboardText} from './nodes.js';
 
 let letters = 'abcdefghijklmnopqrstuvwxyz';
 letters += letters.toUpperCase() + '1234567890';
 
-const symbols = '!#$%&/()[].,;<>?¿¡+*-=';
+// const symbols = '!#$%&/()[].,;<>?¿¡+*-=';
 
 const randomPassword = (passwordLength) => {
-  const minLength = 6;
   const randomNumArr = [];
   let randomNum = 0;
-  if(passwordLength >= minLength){
-    for(let i = 0; i < passwordLength; i++){
-      randomNum = Math.floor(Math.random() * (letters.length));
-      randomNumArr.push(letters[randomNum]);
-    }
-    console.log(randomNumArr);
-    passwordText.innerText = randomNumArr.join('');
-  } else {
-    return 'Your password should be at least 6 characters long';
+
+  for(let i = 0; i < passwordLength; i++){
+    randomNum = Math.floor(Math.random() * (letters.length));
+    randomNumArr.push(letters[randomNum]);
   }
+
+  console.log(randomNumArr);
+  passwordText.innerText = randomNumArr.join('');
+  clipboardText.value = randomNumArr.join('');
 }
 
-export {randomPassword}
+const copyPassword = () => {
+  clipboardText.select();
+  clipboardText.setSelectionRange(0, clipboardText.innerText.length);
+  navigator.clipboard.writeText(clipboardText.value);
+  console.log(`Copied ${clipboardText.value} succesfully in clipboard`);
+}
+
+export {randomPassword, copyPassword}
