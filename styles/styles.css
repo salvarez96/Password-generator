@@ -38,21 +38,38 @@ section {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: fit-content;
-  min-height: 24px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  height: 50px;
 }
 
 .password-container__text{
   height: inherit;
   width: 100%;
   font-size: 1.8rem;
-  background-color: rgba(255, 255, 255, 0.3);
-  overflow: hidden;
+  overflow: auto;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   border: none;
-  padding: 11px;
+  margin-left: 11px;
+  padding-top: calc(29px/2);
   text-align: left;
+  scrollbar-gutter: stable;
+}
+
+
+.password-container__text::-webkit-scrollbar-thumb{
+  background-color: rgba(201, 37, 59, 0.7);
+  border-radius: 5px;
+}
+
+.password-container__text::-webkit-scrollbar{
+  width: 0;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 0 5px;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .password-container__copy{
@@ -100,4 +117,5 @@ section {
   height: 40px;
   border-radius: 10px;
   border: none;
+  font-size: 1.6rem;
 }
