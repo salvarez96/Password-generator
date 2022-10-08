@@ -20,13 +20,13 @@
       <div class="password-container">
         <p class="password-container__text"></p>
         <!-- Copy icons created by Catalin Fertu - Flaticon: https://www.flaticon.com/free-icons/copy -->
-        <input type="button" value="" class="password-container__copy">
+        <input type="button" value="" class="password-container__copy" title="Copy password" />
       </div>
       <div class="length-container">
         <p class="length-container__text">Password length: <span class="length-container__text--num-value"></span></p>
-        <input type="range" min="6" max="30" value="10" class="length-container__slider">
+        <input type="range" min="6" max="30" value="10" class="length-container__slider" />
       </div>
-      <input type="button" value="Generate" class="generate-password">
+      <input type="button" value="Generate" class="generate-password" id="generate-password" title="Generate new password" />
     </section>
   </main>
   <script type="module" src="./src/nodes.js"></script>
